@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+}
+
+/* ******************************************************************** Navbar ******************************************************************** */
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    background: rgba(48, 45, 74, 0.7);
+    font-family: sans-serif;
+    position: fixed;
+    /*always front*/
+    z-index: 1;
+    top: 0;
+    width: 100%;
+}
+
+.navbar .logo {
+    width: 160px;
+    height: 120px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    margin-right: 30px;
+}
+
+.navbar ul li {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    padding: 20px 30px;
+}
+
+/* ************************************************************************************************************************************************ */
+
+/* ******************************************************************** Content ******************************************************************* */
+
+.content {
+    background-color: #ffffff;
+    margin-top: 120px;
+    padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    box-shadow: rgba(255, 255, 255, 0.6) 0px 14px 28px, rgba(255, 255, 255, 0.22) 0px 10px 10px;
+}
+
+.content h1 {
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 70px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+h3 {
+    font-size: 50px;
+    font-family: "Alegreya Sans", sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.content-image {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: auto;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.content hr {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.content p {
+    font-size: 20px;
+    font-family: "Open Sans", 'Courier New';
+    line-height: 35px;
+    margin: 20px 35px;
+}
+
+/* ************************************************************************************************************************************************ */
+
+/* ********************************************************************* Body ********************************************************************* */
+
+body {
+    height: 200px;
+    background-color: #cccccc;
+    background-image: url(img/background.jpg);
+}
+
+/* ************************************************************************************************************************************************ */
+
+/* ******************************************************************** Footer ******************************************************************** */
+footer {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+footer hr {
+    margin: 0 auto;
+}
+
+/* ************************************************************************************************************************************************ */
+
+/* ******************************************************************** Hovers ******************************************************************** */
+.content-image:hover {
+    animation-name: image-scale;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.navbar ul li:hover {
+    cursor: pointer;
+    background: #2b1c38;
+    animation-name: navbar-ele;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+/* ************************************************************************************************************************************************ */
+
+/* ****************************************************************** Animations ****************************************************************** */
+@keyframes image-scale {
+
+    /*image starts at normal size*/
+    0% {
+        transform: scale(1)
+    }
+
+    /*Then grows until fits in the div*/
+    100% {
+        transform: scale(1.1)
+    }
+}
+
+@keyframes navbar-ele {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1)
+    }
+}
+
+/* ************************************************************************************************************************************************ */
