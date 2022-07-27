@@ -1,14 +1,19 @@
+:root {
+    --slide-transform: 0;
+    --transition: transform 1s;
+}
+
 * {
     margin: 0;
 }
 
+
 /* ******************************************************************** Navbar ******************************************************************** */
 .navbar {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 3fr 1fr;
     align-items: center;
-    background: rgba(48, 45, 74, 0.7);
-    font-family: sans-serif;
+    background: rgba(0, 0, 0, 0.7);
     position: fixed;
     /*always front*/
     z-index: 1;
@@ -17,8 +22,10 @@
 }
 
 .navbar .logo {
-    width: 160px;
-    height: 120px;
+    opacity: 0.6;
+    margin-top: 10px;
+    width: 200px;
+    height: 100px;
 }
 
 .navbar ul {
@@ -31,6 +38,7 @@
 .navbar ul li {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 30px;
+    border-radius: 5%;
 }
 
 .navbar ul li a {
@@ -42,29 +50,130 @@
 
 /* ************************************************************************************************************************************************ */
 
+/* ********************************************************************* Banner ******************************************************************* */
+
+.banner {
+    border: solid rgb(0, 0, 0);
+    border-radius: 2%;
+    border-width: 3px;
+    width: 95%;
+    height: 800px;
+    margin: 120px auto;
+    background: url(img/banner.jpg);
+    background-size: cover;
+    display: grid;
+}
+
+.banner-text {
+    margin: auto auto;
+    font-weight: 700;
+    font-family: "Caveat";
+    font-size: 100px;
+    color: #ffffff;
+    animation: fadeIn;
+    animation-direction: alternate;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+/* ************************************************************************************************************************************************ */
+
+/* ********************************************************************* Card ********************************************************************* */
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 95%;
+    height: 686px;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #2E4159;
+}
+
+.card img {
+    border: solid #fff;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    display: block;
+    margin-top: 20px;
+    width: 50rem;
+    height: 496px;
+    border-radius: 25px;
+}
+
+.card h2 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    font-size: 70px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.card p {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: 10px 20px;
+    color: rgb(255, 255, 255);
+    font-size: 45px;
+}
+
+.card a {
+    text-align: center;
+    border: solid black;
+    border-radius: 25px;
+    display: block;
+    background-color: #7A77D9;
+    color: #fff;
+    text-decoration: none;
+    width: 80%;
+    padding: 20px 20px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    align-self: center;
+}
+
+/* ************************************************************************************************************************************************ */
+
 /* ******************************************************************** Content ******************************************************************* */
 
 .content {
-    background-color: #ffffff;
+    background-color: #323159;
     margin-top: 120px;
     padding-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-    box-shadow: rgba(255, 255, 255, 0.6) 0px 14px 28px, rgba(255, 255, 255, 0.22) 0px 10px 10px;
+    width: 80%;
+    border-radius: 3px;
+    box-shadow: rgba(35, 1, 66, 0.6) 0px 14px 28px, rgba(255, 255, 255, 0.22) 0px 10px 10px;
 }
 
 .content h1 {
-    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: 700;
     font-size: 70px;
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: #fff;
 }
 
 h3 {
+    color: white;
     font-size: 50px;
     font-family: "Alegreya Sans", sans-serif;
+    font-weight: 300;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -72,22 +181,24 @@ h3 {
 
 .content-image {
     display: block;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
     height: auto;
+    border-radius: 5%;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .content hr {
     width: 80%;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 .content p {
-    font-size: 20px;
+    color: #fff;
+    font-size: 30px;
     font-family: "Open Sans", 'Courier New';
     line-height: 35px;
     margin: 20px 35px;
@@ -99,15 +210,30 @@ h3 {
 
 body {
     height: 200px;
-    background-color: #cccccc;
-    background-image: url(img/background.jpg);
+    background-color: #4F4D8C;
+    font-size: 50px;
+}
+
+/* ************************************************************************************************************************************************ */
+
+/* ********************************************************************** h1 ********************************************************************** */
+
+.main {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: sans-serif;
+    font-size: 70px;
+    text-align: center;
+    color: #ffffff;
 }
 
 /* ************************************************************************************************************************************************ */
 
 /* ******************************************************************** Footer ******************************************************************** */
 footer {
+    margin-top: 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
     background-color: rgba(255, 255, 255, 0.7);
     text-align: center;
 }
@@ -121,16 +247,28 @@ footer hr {
 /* ******************************************************************** Hovers ******************************************************************** */
 .content-image:hover {
     animation-name: image-scale;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
 .navbar ul li:hover {
     cursor: pointer;
-    background: #2b1c38;
-    animation-name: navbar-ele;
+    background: #fff;
+    animation-name: make-big;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
+}
+
+.navbar ul li a:hover {
+    color: black;
+}
+
+.card a:hover {
+    background-color: #323159;
+    animation-name: make-big;
+    animation-duration: 0.9s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
 }
 
 /* ************************************************************************************************************************************************ */
@@ -145,17 +283,27 @@ footer hr {
 
     /*Then grows until fits in the div*/
     100% {
-        transform: scale(1.1)
+        transform: scale(1.05)
     }
 }
 
-@keyframes navbar-ele {
+@keyframes make-big {
     0% {
         transform: scale(1);
     }
 
     100% {
         transform: scale(1.1)
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 
